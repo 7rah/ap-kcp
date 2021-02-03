@@ -16,7 +16,7 @@ jobs:
         env:
           RUSTFLAGS: -C target-cpu=amdfam10 #-Cprofile-generate=pgodata -Cpanic=abort
         run: 
-          cargo build --release
+          cargo build --release --bin ap-kcp-tun --features build_binary
 
       - uses: actions/upload-artifact@v2
         with:
@@ -40,7 +40,7 @@ jobs:
           env: 
             RUSTFLAGS='-C target-cpu=cortex-a53'
           command: build
-          args: --release --target aarch64-linux-android
+          args: --release --target aarch64-linux-android --bin ap-kcp-tun --features build_binary
       - uses: actions/upload-artifact@v2
         with:
            name: android-ap-kcp
@@ -80,7 +80,7 @@ jobs:
           command: build
           env:
             RUSTFLAGS='-C target-cpu=mips32r2'
-          args: --release --target mipsel-unknown-linux-musl
+          args: --release --target mipsel-unknown-linux-musl --bin ap-kcp-tun --features build_binary
 
       - uses: actions/upload-artifact@v2
         with:
@@ -101,7 +101,7 @@ jobs:
           env: 
             RUSTFLAGS='-C target-cpu=cascadelake'
           command: build
-          args: --release
+          args: --release --bin ap-kcp-tun --features build_binary
       - uses: actions/upload-artifact@v2
         with:
            name: ap-kcp
