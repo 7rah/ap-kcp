@@ -21,7 +21,7 @@ num_cpus = {version = "1.13", optional = true}
 serde = {version = "1.0", optional = true}
 serde_derive = {version = "1.0", optional = true}
 toml = {version = "0.5", optional = true}
-ring = {version = "0.16", optional = true}
+ring = {version = "0.16.20", optional = true}
 clap = {version = "2.33", optional = true}
 
 [profile.release]
