@@ -20,8 +20,8 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: ap-kcp.exe
-          path: target/release/ap-kcp.exe
+          name: ap-kcp-tun.exe
+          path: target/release/ap-kcp-tun.exe
           
 
   android:
@@ -43,14 +43,14 @@ jobs:
           args: --release --target aarch64-linux-android --bin ap-kcp-tun --features build_binary
       - uses: actions/upload-artifact@v2
         with:
-           name: android-ap-kcp
-           path: target/aarch64-linux-android/release/ap-kcp
+           name: android-ap-kcp-tun
+           path: target/aarch64-linux-android/release/ap-kcp-tun
 
   mipsel:
     name: mipsel
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout trojan-r
+      - name: Checkout ap-kcp-tun
         uses: actions/checkout@v2
         
       - name: Checkout ring PR 1181 with mips support
@@ -84,8 +84,8 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-           name: ap-kcp
-           path: target/mipsel-unknown-linux-musl/release/ap-kcp
+           name: mipsel-ap-kcp-tun
+           path: target/mipsel-unknown-linux-musl/release/ap-kcp-tun
   
   linux:
     name: linux
@@ -104,5 +104,5 @@ jobs:
           args: --release --bin ap-kcp-tun --features build_binary
       - uses: actions/upload-artifact@v2
         with:
-           name: ap-kcp
-           path: target/release/ap-kcp
+           name: linux-ap-kcp-tun
+           path: target/release/ap-kcp-tun
