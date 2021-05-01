@@ -14,7 +14,7 @@ jobs:
           toolchain: stable
       - name: Build
         env:
-          RUSTFLAGS: -C target-cpu=amdfam10 #-Cprofile-generate=pgodata -Cpanic=abort
+          RUSTFLAGS: -C target-cpu=amdfam10
         run: 
           cargo build --release --bin ap-kcp-tun --features build_binary
 
